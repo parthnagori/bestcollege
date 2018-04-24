@@ -1,0 +1,583 @@
+{
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "dropdown",
+          "name": "STABBR",
+          "title": "Where are you from?",
+          "isRequired": true,
+          "choices": [
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"
+          ],
+          "optionsCaption": "Choose a State"
+        },
+        {
+          "type": "radiogroup",
+          "name": "stateSchool",
+          "title": "Are you looking for an in state our out of state school?",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "inState",
+              "text": "In State"
+            },
+            {
+              "value": "outOfState",
+              "text": "Out of State"
+            },
+            {
+              "value": "both",
+              "text": "Both"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "region",
+          "visibleIf":
+            "{stateSchool} = \"outOfState\" or {stateSchool} = \"both\"",
+          "title": "What region are you looking for schools in?",
+          "choices": [
+            {
+              "value": "south",
+              "text": "South"
+            },
+            {
+              "value": "west",
+              "text": "West"
+            },
+            {
+              "value": "newEngland",
+              "text": "New England"
+            },
+            {
+              "value": "midAtlantic",
+              "text": "Mid Atlantic"
+            },
+            {
+              "value": "midwest",
+              "text": "Midwest"
+            },
+            {
+              "value": "southwest",
+              "text": "Southwest"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "zipCode",
+          "title": "What is your zip code?",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "gender",
+          "title": "What is your gender?",
+          "choices": [
+            {
+              "value": "male",
+              "text": "Male"
+            },
+            {
+              "value": "female",
+              "text": "Female"
+            },
+            {
+              "value": "other",
+              "text": "Other"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "genderExclusive",
+          "title": "Are you looking for a gender exclusive school?",
+          "choices": [
+            {
+              "value": 1,
+              "text": "Yes"
+            },
+            {
+              "value": 0,
+              "text": "No"
+            },
+            {
+              "value": -1,
+              "text": "No Preference"
+            }
+          ]
+        },
+        {
+          "type": "multipletext",
+          "name": "testScores",
+          "title": "What are your test scores?",
+          "description": "You may submit either SAT , ACT or Both",
+          "isRequired": true,
+          "items": [
+            {
+              "name": "SAT_AVG",
+              "title": "SAT"
+            },
+            {
+              "name": "ACTCMMID",
+              "title": "ACT"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "householdIncome",
+          "title": "What is your household income level?",
+          "isRequired": true,
+          "choices": [
+            "< $30,000",
+            "$30,00 - $48,000",
+            "$48,000 - $75,000",
+            "$75,000 - $110,000",
+            "> $110,000"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "MAIN",
+          "title": "Are you looking for a main or branch campus?",
+          "choices": [
+            {
+              "value": 1,
+              "text": "Main"
+            },
+            {
+              "value": 0,
+              "text": "Branch"
+            },
+            {
+              "value": -1,
+              "text": "No Preference"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "CONTROL",
+          "title": "Are you looking for a public or private school?",
+          "choices": [
+            {
+              "value": 1,
+              "text": "Public"
+            },
+            {
+              "value": 2,
+              "text": "Private"
+            },
+            {
+              "value": -1,
+              "text": "No Preference"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "DISTANCEONLY",
+          "title": "Are you looking for an online only school?",
+          "choices": [
+            {
+              "value": 1,
+              "text": "Yes"
+            },
+            {
+              "value": 0,
+              "text": "No"
+            },
+            {
+              "value": -1,
+              "text": "No Preference"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "acceptanceRate",
+          "title":
+            "Academically, I would prefer:",
+          "choices": [
+            {
+              "value": 0.0,
+              "text": "To be rigorously challeneged"
+            },
+            {
+              "value": 0.30,
+              "text": "To be challeneged"
+            },
+            {
+              "value": 0.60,
+              "text": "To work hard but have some time to focus on other things as well"
+            },
+            {
+              "value": 0.85,
+              "text": "To never touch a book. I'm here to party"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "expectedEarnings",
+          "title":
+            "My college education will help me:",
+          "choices": [
+            {
+              "value": 90000,
+              "text": "Join the upper class"
+            },
+            {
+              "value": 60000,
+              "text": "Make a solid living and provide for my family"
+            },
+            {
+              "value": 35000,
+              "text": "Provide for myself"
+            },
+            {
+              "value": 0,
+              "text": "I do not anticipate my education contributing to my income after graduating."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "page3",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "religion",
+          "title":
+            "Are you looking for a predominant mission or religious affiliation?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": -1,
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "RELAFFIL",
+          "visibleIf": "{religion} = \"yes\"",
+          "title": "If so, which mission or religious affiliation?",
+          "titleLocation": "hidden",
+          "choices": [
+            "American Evangelical Lutheran Church",
+            "African Methodist Episcopal Zion Church",
+            "Assemblies of God Church",
+            "Brethren Church",
+            "Roman Catholic",
+            "Wisconsin Evangelical Lutheran Synod",
+            "Christ and Missionary Alliance Church",
+            "Christian Reformed Church",
+            "Evangelical Congregational Church",
+            "Evangelical Covenant Church of America",
+            "Evangelical Free Church of America",
+            "Evangelical Lutheran Church",
+            "International United Pentecostal Church",
+            "Free Will Baptist Church",
+            "Interdenominational",
+            "Mennonite Brethren Church",
+            "Moravian Church",
+            "North American Baptist",
+            "Pentecostal Holiness Church",
+            "Christian Churches and Churches of Christ",
+            "Reformed Church in America",
+            "Episcopal Church, Reformed",
+            "African Methodist Episcopal",
+            "American Baptist",
+            "American Lutheran",
+            "Baptist",
+            "Christian Methodist Episcopal",
+            "Church of God",
+            "Church of Brethren",
+            "Church of the Nazarene",
+            "Cumberland Presbyterian",
+            "Christian Church (Disciples of Christ)",
+            "Free Methodist",
+            "Friends",
+            "Presbyterian Church (USA)",
+            "Lutheran Church in America",
+            "Lutheran Church - Missouri Synod",
+            "Mennonite Church",
+            "United Methodist",
+            "Protestant Episcopal",
+            "Churches of Christ",
+            "Southern Baptist",
+            "United Church of Christ",
+            "Protestant, not specified",
+            "Multiple Protestant Denomination",
+            "Other Protestant",
+            "Jewish",
+            "Reformed Presbyterian Church",
+            "United Brethren Church",
+            "Missionary Church Inc",
+            "Undenominational",
+            "Wesleyan",
+            "Greek Orthodox",
+            "Russian Orthodox",
+            "Unitarian Universalist",
+            "Latter Day Saints (Mormon Church)",
+            "Seventh Day Adventists",
+            "The Presbyterian Church in America",
+            "Other (none of the above)",
+            "Original Free Will Baptist",
+            "Ecumenical Christian",
+            "Evangelical Christian",
+            "Presbyterian"
+          ],
+          "optionsCaption": "Please choose a mission or religious affiliation"
+        },
+        {
+          "type": "dropdown",
+          "name": "userDemographic",
+          "title": "Which demographic best describes you?",
+          "choices": [
+            "White",
+            "Black",
+            "Hispanic",
+            "Asian",
+            "Asian Pacific Islander",
+            "Tribal",
+            "Prefer not to say"
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "demographicPreference",
+          "title":
+            "Are you looking for a student body with a specific demographic?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": -1,
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "demographicType",
+          "visibleIf": "{demographicPreference} = \"yes\"",
+          "titleLocation": "hidden",
+          "choices": [
+            "White",
+            "Black",
+            "Hispanic",
+            "Asian",
+            "Asian Pacific Islander",
+            "Tribal",
+            "Familiar Crowd",
+            "Balanced Mix",
+            "Significantly Different"
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "historicAssociation",
+          "title":
+            "Are you looking for a school with a specific historical association?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": -1,
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "historicType",
+          "visibleIf": "{historicAssociation} = \"yes\"",
+          "titleLocation": "hidden",
+          "choices": [
+            "HBCU",
+            "PBI",
+            "ANNHI",
+            "HSI",
+            "NANTI"
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "UG25ABV",
+          "title":
+            "Would you want classmates who are older or younger than 25?",
+          "choices": [
+            {
+              "value": 0,
+              "text": "Mostly younger than age 25"
+            },
+            {
+              "value": 1,
+              "text": "Mostly older than age 25"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "PPTUG_EF",
+          "title":
+            "Would you want classmates who go to school full time or part time?",
+          "choices": [
+            {
+              "value": 1,
+              "text": "Part-time"
+            },
+            {
+              "value": 0,
+              "text": "Full-time"
+            }
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "financialAid",
+          "title": "Do you require financial aid?",
+          "choices": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            },
+            {
+              "value": -1,
+              "text": "Not sure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "page4",
+      "elements" : [
+        {
+          "type": "nouislider",
+          "name": "winter",
+          "title": "What is your ideal temperature for winter? (in Fahrenheit)"
+        },
+        {
+          "type": "nouislider",
+          "name": "spring",
+          "title": "What is your ideal temperature for spring? (in Fahrenheit)"
+        },
+        {
+          "type": "nouislider",
+          "name": "summer",
+          "title": "What is your ideal temperature for summer? (in Fahrenheit)"
+        },
+        {
+          "type": "nouislider",
+          "name": "fall",
+          "title": "What is your ideal temperature for fall? (in Fahrenheit)"
+        }
+      ]
+    },
+    {
+      "name": "page5",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "studentBodySize",
+          "title": "What sized student body are you looking for?",
+          "isRequired": true,
+          "choices": [
+            "Very small (upto 1000)",
+            "Small (1000 - 2500)",
+            "Medium (2500 - 10000)",
+            "Large (10000+)",
+            "Don't Care"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "semesterTuition",
+          "title":
+            "How much in semester tution are you looking to pay for school?",
+          "inputType": "number"
+        },
+        {
+          "type": "text",
+          "name": "monthlyLoans",
+          "title":
+            "How much are you antipiating to pay for monthly tuition loans?",
+          "inputType" : "number"
+        }
+      ]
+    }
+  ]
+}
