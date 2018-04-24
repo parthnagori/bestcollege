@@ -15,7 +15,7 @@ function map_builder( ret_data ) {
 		.attr( "class", "tooltip" )
 		.style( "opacity", 0 );
 
-	d3.json( "https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json", function( error, us ) {
+	d3.json( "https://rawgit.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json", function( error, us ) {
 
 		svg.selectAll( "path" )
 			.data( us.features )
