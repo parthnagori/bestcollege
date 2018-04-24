@@ -1,3 +1,4 @@
+matplotlib.use('Agg')
 from skcriteria import Data, MIN, MAX
 from skcriteria.madm import closeness, simple
 import pandas as pd
