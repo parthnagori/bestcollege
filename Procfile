@@ -1,1 +1,1 @@
-web: gunicorn bestcollegesite.wsgi
+web: gunicorn bestcollegesite.wsgi --log-file -
