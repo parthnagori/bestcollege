@@ -8,6 +8,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
 import json
+import requests
 
 survey_response = {
     'winter' : '40.0',

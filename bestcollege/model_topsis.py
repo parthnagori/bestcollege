@@ -5,6 +5,7 @@ from skcriteria.madm import closeness, simple
 import pandas as pd
 import numpy as np
 import os
+import requests, json
 
 def get_bar_data( lat, lon ):
 	google_places_base_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=2500&types=bar&location='
