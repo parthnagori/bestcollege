@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from .model_knn import apply_knn
 from .model_topsis import perform_topsis
 from .diversity_mix import get_diversity_mix
-
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
@@ -115,7 +114,7 @@ def get_income_range( survey_income, income_key ):
         return 0
 
 def get_student_body_size( survey_school_size ):
-    size_mapping = { 'Very small' : [0, 1000], 'Small' : [1000, 2500], 'Medium' : [2500, 10000], 'Large' : [10000, 100000], "Don't Care": [] }
+    size_mapping = { 'Very small (upto 1000)' : [0, 1000], 'Small (1000 - 2500)' : [1000, 2500], 'Medium (2500 - 10000)' : [2500, 10000], 'Large (10000+)' : [10000, 100000], "Don't Care": [] }
     return size_mapping[survey_school_size]
 
 def get_historic( survey_historic, historic_key ):
@@ -172,15 +171,15 @@ def submit_survey(request):
         print ( survey_response )
 
         ##########################################
-        # data var is users survey answers 		 #
+        # data var is users survey answers       #
         # use this var to decide on best schools #
-        # IMPORTANT: when schools are decided, 	 #
-        # make a list of their ids IN ORDER		 #
-        # 				and return	 			 #
+        # IMPORTANT: when schools are decided,   #
+        # make a list of their ids IN ORDER      #
+        #               and return               #
         # See the sample list and response below #
         # This list is used to build the results #
         # url so that page know what schools to  #
-        # 			  load data for 			 #
+        #             load data for              #
         ##########################################
 
         sat = None
@@ -276,7 +275,7 @@ def submit_survey(request):
         print(unit_ids)
         temp_ids = [int(uid) for uid in unit_ids]
         unit_ids = temp_ids
-
+        
         # for dev testing
         uni_ids = [199193, 139959, 198419, 228778, 217882, 100858, 243744, 171100, 216597, 228875]
 

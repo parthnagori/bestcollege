@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-		
-		<!-- font awesome icons -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
-		
-		<!-- my css -->
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        
+        <!-- font awesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+        
+        <!-- my css -->
         {% load static %}
-		<link rel="stylesheet" href="https://rawgit.com/parthnagori/bestcollege/master/static/style/style.css">
+        <link rel="stylesheet" href="https://rawgit.com/parthnagori/bestcollege/master/static/style/style.css">
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- popper js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-		
-		<!-- Latest compiled Bootstrap CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.js"></script>
+        
+        <!-- Latest compiled Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.js"></script>
 
-		<!-- Latest compiled JavaScript -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
         <!-- bootstrap slider -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
@@ -32,13 +32,13 @@
 
         <!-- latest d3 visualization library -->
         <script src="https://d3js.org/d3.v4.min.js"></script>
-		
-		<meta charset="UTF-8">
-		<title>What College is Best for Me?</title>
+        
+        <meta charset="UTF-8">
+        <title>What College is Best for Me?</title>
     
-	</head>
-	<body class="home_body" ng-app="angular_app" ng-controller="angular_ctrl">
-		<nav id="top_nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    </head>
+    <body class="home_body" ng-app="angular_app" ng-controller="angular_ctrl">
+        <nav id="top_nav" class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">What College is Best for Me?</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -68,84 +68,86 @@
 
         
         <div class="row custom_gutter">
-        	<div class="col-6">
+            <div class="col-5">
                 <div class="card mx-auto">
                     <div class="card-header">Results</div>
                     <div class="card-body">
                         <h5 class="card-title">Results Table</h5>
 
-                		<div class="input-group mb-3">
-          					<div class="input-group-prepend">
-            					<span class="input-group-text" id="search_icon">
-            						<i class="fa fa-search"></i>
-            					</span>
-          					</div>
-          					<input type="text" class="form-control" placeholder="Search for a school" ng-model="search_schools.name" aria-describedby="search_icon">
-        				</div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="search_icon">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search for a school" ng-model="search_schools.name" aria-describedby="search_icon">
+                        </div>
 
-                		<div class="table-responsive">
-                			<table class="table table-hover table-dark">
-                				<thead>
-                					<tr>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-dark">
+                                <thead>
+                                    <tr>
                                         <th>
                                             <a class="header_sort" href="" ng-click="sortType = 'rank'; sortReverse = !sortReverse">Rank
                                                 <span ng-show="sortType == 'rank' && !sortReverse" class="fa fa-caret-down"></span>
                                                 <span ng-show="sortType == 'rank' && sortReverse" class="fa fa-caret-up"></span>
                                             </a>
                                         </th>
-                						<th>
-                							<a class="header_sort" href="" ng-click="sortType = 'name'; sortReverse = !sortReverse">School Name
-        										<span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-        										<span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
-        									</a>
-        								</th>
-        								<th>
-                							<a class="header_sort" href="" ng-click="sortType = 'city'; sortReverse = !sortReverse">City
-        										<span ng-show="sortType == 'city' && !sortReverse" class="fa fa-caret-down"></span>
-        										<span ng-show="sortType == 'city' && sortReverse" class="fa fa-caret-up"></span>
-        									</a>
-        								</th>
-        								<th>
-                							<a class="header_sort" href="" ng-click="sortType = 'state'; sortReverse = !sortReverse">State
+                                        <th>
+                                            <a class="header_sort" href="" ng-click="sortType = 'name'; sortReverse = !sortReverse">School Name
+                                                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a class="header_sort" href="" ng-click="sortType = 'city'; sortReverse = !sortReverse">City
+                                                <span ng-show="sortType == 'city' && !sortReverse" class="fa fa-caret-down"></span>
+                                                <span ng-show="sortType == 'city' && sortReverse" class="fa fa-caret-up"></span>
+                                            </a>
+                                        </th>
+                                        <th>
+                                            <a class="header_sort" href="" ng-click="sortType = 'state'; sortReverse = !sortReverse">State
                                                 <span ng-show="sortType == 'state' && !sortReverse" class="fa fa-caret-down"></span>
                                                 <span ng-show="sortType == 'state' && sortReverse" class="fa fa-caret-up"></span>
-        									</a>
-        								</th>
-                					</tr>
-                				</thead>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
 
-                				<tbody>
-                					<tr ng-repeat="univ in schools | orderBy : sortType : sortReverse | filter : search_schools">
+                                <tbody>
+                                    <tr ng-repeat="univ in schools | orderBy : sortType : sortReverse | filter : search_schools">
                                         {% verbatim %}
                                         <td>{{ univ.rank }}</td>
-                						<td>{{ univ.name }}</td>
-                						<td>{{ univ.city }}</td>
-                						<td>{{ univ.state }}</td>
+                                        <td>{{ univ.name }}</td>
+                                        <td>{{ univ.city }}</td>
+                                        <td>{{ univ.state }}</td>
                                         {% endverbatim %}
-                					</tr>
-                				</tbody>
-                			</table>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <br>
-                        <div id="sort_btns" class="btn-toolbar" role="toolbar">
-                            <div class="btn-group">
-                                <button class="btn btn-dark active" ng-click="show_sort_modal()">Sort Schools</button>
+
+                        <div class="input-group">
+                            <div class="btn-group mr-3">
+                                <button class="btn btn-dark active" id="show_sort_btn" ng-click="show_sort_modal()">Sort Schools</button>
                             </div>
+                            <div class="loader" id="sort_loader"></div>
                         </div>
                     </div>
                 </div>
-        	</div>
+            </div>
 
-            <div class="col-6" id="graph_col">
+            <div class="col-7" id="graph_col">
                 <script type="text/javascript" src="https://rawgit.com/parthnagori/bestcollege/master/static/univ_map.js"></script>
             </div>
 
-        	<div class="modal" id="info_modal">
-        		<div class="modal-content" id="info_modal_body">
-        			<span class="close">&times;</span>
-        			<h5>Information about how our application works</h5>
-        		</div>
-        	</div>
+            <div class="modal" id="info_modal">
+                <div class="modal-content" id="info_modal_body">
+                    <span class="close">&times;</span>
+                    <h5>Information about how our application works</h5>
+                </div>
+            </div>
 
             {% verbatim %}
             <div class="modal" id="sort_modal">
@@ -189,77 +191,7 @@
                             <span class="badge badge-primary badge-pill" ng-bind-html="importance_text.nightlife"></span>
                         </li>
                     </ul>
-                            <!--
-                            <div id="weather-collapse" class="collapse" aria-labelledby="weather-heading" data-parent="#sort-collapse-menu">
-                                <div class="card-body">
-                                    <div class="row center">
-                                        <p>
-                                            <span id="spring_temp_lbl" class="slider_lbl" for="spring_temp">Spring: <span ng-bind-html="slider_temp_text.spring"></span>&deg;F</span>
-                                            <input id="spring_temp" class="temp_slider" data-slider-id='spring_temp' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="50"/>
-                                        <p>
-                                    </div>
-                                    <div class="row center">
-                                        <p>
-                                            <span id="spring_temp_lbl" class="slider_lbl" for="summer_temp">Summer: <span ng-bind-html="slider_temp_text.summer"></span>&deg;F</span>
-                                            <input id="summer_temp" class="temp_slider" data-slider-id='summer_temp' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="65"/>
-                                        </p>
-                                    </div>
-                                    <div class="row center">
-                                        <p>
-                                            <span id="fall_temp_lbl" class="slider_lbl" for="fall_temp">Fall: <span ng-bind-html="slider_temp_text.fall"></span>&deg;F</span>
-                                            <input id="fall_temp" class="temp_slider" data-slider-id='fall_temp' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="50"/>
-                                        </p>
-                                    </div>
-                                    <div class="row center">
-                                        <p>
-                                            <span id="winter_temp_lbl" class="slider_lbl" for="summer_temp">Winter: <span ng-bind-html="slider_temp_text.winter"></span>&deg;F</span>
-                                            <input id="winter_temp" class="temp_slider" data-slider-id='winter_temp' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="35"/>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
 
-                        <div class="card">
-                            <div id="crime-heading" class="card-header">
-                                <div class="row">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" aria-expanded="false">Crime Rate</button>
-                                    </h5>
-                                    <div class="btn-toolbar">
-                                        <div class="dropdown">
-                                            <button class="btn btn-dark dropdown-toggle" type="button" id="crime_importance_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Importance</button>
-
-                                            <div class="dropdown-menu" aria-labelledby="crime_importance_dropdown">
-                                                <a class="dropdown-item" href="" ng-repeat="num in importance_nums" ng-click="select_crime_importance( num )">{{ num }}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div id="crime-heading" class="card-header">
-                                <div class="row">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" aria-expanded="false">Night Life</button>
-                                    </h5>
-                                    <div class="btn-toolbar">
-                                        <div class="dropdown">
-                                            <button class="btn btn-dark dropdown-toggle" type="button" id="nightlife_importance_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Importance</button>
-
-                                            <div class="dropdown-menu" aria-labelledby="nightlife_importance_dropdown">
-                                                <a class="dropdown-item" href="" ng-repeat="num in importance_nums" ng-click="select_nightlife_importance( num )">{{ num }}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                     <div class="input-group mt-3">
                         <button class="btn btn-dark" ng-click="sort_schools()">Submit</button>
                     </div>
@@ -274,27 +206,18 @@
         <script type="text/javascript">
             var ids = [];
             var id_str = "";
-        	var app = angular.module( 'angular_app', [] );
-			app.controller( 'angular_ctrl', [ '$scope', '$sce', '$http', function ( $scope, $sce, $http ) {
+            var app = angular.module( 'angular_app', [] );
+            app.controller( 'angular_ctrl', [ '$scope', '$sce', '$http', function ( $scope, $sce, $http ) {
                 $scope.schools = [];
                 $scope.importance_nums = [1, 2, 3, 4, 5];
                 $scope.sorting_dict = {
                     'weather' : {
-                        /*
-                        'temps' : {
-                            'spring' : 50,
-                            'summer' : 65,
-                            'fall' : 50,
-                            'winter' : 35
-                        },
-                        */
                         'importance' : 1
                     },
                     'crime' : {
                         'importance' : 1
                     },
                     'nightlife' : {
-                        'schools' : {},
                         'importance' : 1
                     }
                 };
@@ -304,63 +227,6 @@
                     'crime' : $sce.trustAsHtml( $scope.sorting_dict.crime.importance.toString() ),
                     'nightlife' : $sce.trustAsHtml( $scope.sorting_dict.nightlife.importance.toString() ),
                 };
-
-                /*
-                var spring_slider = $( '#spring_temp' ).slider();
-                var summer_slider = $( '#summer_temp' ).slider();
-                var fall_slider = $( '#fall_temp' ).slider();
-                var winter_slider = $( '#winter_temp' ).slider();
-                $scope.slider_temp_text = {
-                    'spring' : $sce.trustAsHtml( spring_slider.slider( 'getValue' ).toString() ),
-                    'summer' : $sce.trustAsHtml( summer_slider.slider( 'getValue' ).toString() ),
-                    'fall' : $sce.trustAsHtml( fall_slider.slider( 'getValue' ).toString() ),
-                    'winter' : $sce.trustAsHtml( winter_slider.slider( 'getValue' ).toString() )
-                };
-
-                spring_slider.slider( {
-                    formatter: function( val ) {
-                        return 'Current value: ' + val;
-                    }
-                } );
-
-                summer_slider.slider( {
-                    formatter: function( val ) {
-                        return 'Current value: ' + val;
-                    }
-                } );
-
-                fall_slider.slider( {
-                    formatter: function( val ) {
-                        return 'Current value: ' + val;
-                    }
-                } );
-
-                winter_slider.slider( {
-                    formatter: function( val ) {
-                        return 'Current value: ' + val;
-                    }
-                } );
-
-                spring_slider.on( "change", function( slideEvt ) {
-                    $scope.slider_temp_text.spring = $sce.trustAsHtml( slideEvt.value.newValue.toString() );
-                    $scope.$apply();
-                } );
-
-                summer_slider.on( "change", function( slideEvt ) {
-                    $scope.slider_temp_text.summer = $sce.trustAsHtml( slideEvt.value.newValue.toString() );
-                    $scope.$apply();
-                } );
-
-                fall_slider.on( "change", function( slideEvt ) {
-                    $scope.slider_temp_text.fall = $sce.trustAsHtml( slideEvt.value.newValue.toString() );
-                    $scope.$apply();
-                } );
-
-                winter_slider.on( "change", function( slideEvt ) {
-                    $scope.slider_temp_text.winter = $sce.trustAsHtml( slideEvt.value.newValue.toString() );
-                    $scope.$apply();
-                } );
-                */
 
                 var full_url = window.location.href;
                 var id_key = "?ids=";
@@ -394,17 +260,11 @@
                                 $scope.schools[j].zip = res.data.results[i]['school.zip'];
                                 $scope.schools[j].lat = res.data.results[i]['location.lat'];
                                 $scope.schools[j].lon = res.data.results[i]['location.lon'];
-                                if ( res.data.results[i]['school.ownership'] == 1 ) {
-                                    $scope.schools[j].ownership = "Public";
-                                } else if ( res.data.results[i]['school.ownership'] == 2 ) {
-                                    $scope.schools[j].ownership = "Private";
-                                }
                             }
                         }
                     }
 
                     load_map();
-                    get_bars( 0 );
                 } );
 
                 function load_map() {
@@ -427,61 +287,10 @@
                     } );
                 }
 
-
-                var google_places_base_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=2500&types=bar&location=';
-                var google_places_api_key = '&key=AIzaSyAnsbjT7Dm9Qz9Daf8EgmaL1jaovBfV_Hc';
-
-                var bar_rank = [];
-                var bar_data = {};
-                var get_bars = function( idx ) { 
-                    var google_places_url = google_places_base_url;
-                    //console.log( $scope.schools[idx].name );
-                    google_places_url += $scope.schools[idx].lat + ',';
-                    google_places_url += $scope.schools[idx].lon;
-                    $.get( google_places_url + google_places_api_key, function( res ) {
-                        //console.log( res.results.length );
-                        bar_rank[idx] = { count : res.results.length };
-                        bar_rank[idx].id = $scope.schools[idx].id;
-                        bar_rank[idx].name = $scope.schools[idx].name;
-                        console.log( $scope.schools[idx].name + ' ' + google_places_url + google_places_api_key );
-                        var sum = 0;
-                        var valid_count = 0;
-                        for ( var i = 0; i < res.results.length; i++ ) {
-                            if ( res.results[i].rating != undefined ) {
-                                sum += res.results[i].rating;
-                                valid_count++;
-                            }
-                        }
-
-                        bar_rank[idx].avg_rating = sum / valid_count;
-
-                        bar_rank[idx].value = ( ( bar_rank[idx].count / 20.0 ) + ( bar_rank[idx].avg_rating / 5.0 ) ) / 2.0;
-                        bar_data[$scope.schools[idx].id] = {
-                            'nightlife_score' : ( ( bar_rank[idx].count / 20.0 ) + ( bar_rank[idx].avg_rating / 5.0 ) ) / 2.0,
-                            'zip' : $scope.schools[idx].zip
-                        };
-
-                        if ( idx < $scope.schools.length - 1 )
-                            get_bars( ++idx );
-                        else {
-                            console.log( bar_rank );
-                            bar_rank = mergesort( bar_rank.slice() ).slice();
-                            console.log( bar_rank );
-                            $( '#sort_btns' ).show( 250 );
-                        }
-                        
-                    } );
-                }
-
                 $scope.sort_schools = function() {
+                    $( '#sort_loader' ).show();
                     $( '#sort_modal' ).hide( 250 );
-                    /*
-                    $scope.sorting_dict.weather.temps.spring = spring_slider.slider( 'getValue' );
-                    $scope.sorting_dict.weather.temps.summer = summer_slider.slider( 'getValue' );
-                    $scope.sorting_dict.weather.temps.fall = fall_slider.slider( 'getValue' );
-                    $scope.sorting_dict.weather.temps.winter = winter_slider.slider( 'getValue' );
-                    */
-                    $scope.sorting_dict.nightlife.schools = bar_data;
+                    $scope.sorting_dict.schools = $scope.schools.slice();
 
                     console.log( $scope.sorting_dict );
 
@@ -499,6 +308,7 @@
                             }
                         }
                         $scope.$apply();
+                        $( '#sort_loader' ).hide( 250 );
                     } );
                 }
 
@@ -521,90 +331,39 @@
                     $scope.importance_text.nightlife = $sce.trustAsHtml( n.toString() );
                 }
                 
-                function mergesort( bar_list ) {
-                    if ( bar_list.length === 1 )
-                        return bar_list;
-
-                    var mid = Math.floor( bar_list.length / 2 );
-                    var left = bar_list.slice( 0, mid );
-                    var right = bar_list.slice( mid );
-                    
-                    return mergesort_helper( mergesort( left ), mergesort( right ) );
-                }
-
-                function mergesort_helper( left, right ) {
-                    var i = 0;
-                    var j = 0;
-                    var res = [];
-
-                    while ( i < left.length && j < right.length ) {
-                        if ( left[i].value > right[j].value ) {
-                            res.push( left[i] );
-                            i++;
-                        } else {
-                            res.push( right[j] );
-                            j++;
-                        }
-                    }
-
-                    while ( i < left.length ) {
-                        res.push( left[i] );
-                        i++;
-                    }
-
-                    while ( j < right.length ) {
-                        res.push( right[j] );
-                        j++;
-                    }
-
-                    return res;
-                }
-                
-                $scope.sort_by_night = function() {
-                    for ( var i = 0; i < bar_rank.length; i++ ) {
-                        for ( var j = 0; j < $scope.schools.length; j++ ) {
-                            if ( bar_rank[i].id === $scope.schools[j].id ) {
-                                var temp = $scope.schools[i];
-                                $scope.schools[i] = $scope.schools[j];
-                                $scope.schools[i].rank = i + 1;
-                                $scope.schools[j] = temp;
-                                $scope.schools[j].rank = j + 1;
-                            }
-                        }
-                    }
-                }
-
                 $scope.show_info_menu = function() {
                     $( '#info_modal' ).show( 200 );
                 }
 
-			} ] );
+            } ] );
 
-			$( '.close' ).click( function() {
-				$( this ).parent().parent().hide( 250 );
-			} );
+            $( '.close' ).click( function() {
+                $( this ).parent().parent().hide( 250 );
+            } );
 
-			function on_page_load() {
-				$( '#info_modal' ).hide();
-				$( '#info_modal_body' ).width( $( window ).width() * 0.35 );
-				$( '#info_modal_body' ).height( $( window ).height() * 0.45 );
+            function on_page_load() {
+                $( '#info_modal' ).hide();
+                $( '#info_modal_body' ).width( $( window ).width() * 0.35 );
+                $( '#info_modal_body' ).height( $( window ).height() * 0.45 );
 
                 $( '#sort_modal' ).hide();
                 $( '#sort_modal_body' ).width( $( window ).width() * 0.35 );
                 $( '#sort_modal_body' ).height( $( window ).height() * 0.55 );
 
+                $( '#sort_loader' ).width( $( '#show_sort_btn' ).height() );
+                $( '#sort_loader' ).height( $( '#show_sort_btn' ).height() );
+                $( '#sort_loader' ).hide();
+                console.log( $( '#sort_loader' ).width() )
+            }
 
-                $( '#sort_btns' ).hide();
-			}
-
-			if ( !window.isLoaded ) {
-				window.addEventListener( "load", function() {
-					on_page_load();
-				}, false );
-			} else {
-				on_page_load();
-			}
+            if ( !window.isLoaded ) {
+                window.addEventListener( "load", function() {
+                    on_page_load();
+                }, false );
+            } else {
+                on_page_load();
+            }
         </script>
-	</body>
+    </body>
 
 </html>
