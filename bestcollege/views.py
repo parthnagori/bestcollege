@@ -206,7 +206,7 @@ def submit_survey(request):
             'INC_PCT_M2' : get_income_range( survey_response['householdIncome'], 'INC_PCT_M2' ),
             'INC_PCT_H1' : get_income_range( survey_response['householdIncome'], 'INC_PCT_H1' ), 
             'INC_PCT_H2' : get_income_range( survey_response['householdIncome'], 'INC_PCT_H2' ),
-            'PAR_ED_PCT_1STGEN' : None, 'C150_4' : 1, 'PCIP14' : 1, 'ADM_RATE': float(survey_response['acceptanceRate']), 
+            'PAR_ED_PCT_1STGEN' : None, 'C150_4' : 1, 'ADM_RATE': float(survey_response['acceptanceRate']), 
             'MD_EARN_WNE_P10': get_numeric_val(survey_response, 'expectedEarnings'), 'RPY_3YR_RT': 1,
             'MD_EARN_WNE_P6':  get_numeric_val(survey_response, 'expectedEarnings'),'RPY_7YR_RT': 1, 'RPY_5YR_RT': 1,
             'SPRING_TAVG': get_numeric_val(survey_response, 'spring'),'SUMMER_TAVG': get_numeric_val(survey_response, 'summer'),
@@ -267,8 +267,8 @@ def submit_survey(request):
         'RELAFFIL' : rel_affil, 'DISTANCEONLY' : get_numeric_val(survey_response, 'DISTANCEONLY'), 
         'HBCU': get_historic( historic_type, 'HBCU' ), 'PBI': get_historic( historic_type, 'PBI' ),
         'ANNHI': get_historic( historic_type, 'ANNHI' ), 'HSI': get_historic( historic_type, 'HSI' ), 
-        'NANTI': get_historic( historic_type, 'NANTI' ), 'MENONLY': men_only, 'WOMENONLY': women_only, 
-        'CIP14BACHL': 1, 'GRAD_DEBT_MDN10YR': [0,survey_response['monthlyLoans']] }
+        'NANTI': get_historic( historic_type, 'NANTI' ), 'MENONLY': men_only, 'WOMENONLY': women_only,
+        'GRAD_DEBT_MDN10YR': [0,survey_response['monthlyLoans']] }
 
         if survey_response['program']:
              user_input["PCIP"+survey_response['program']] = 1
