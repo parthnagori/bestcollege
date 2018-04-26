@@ -260,7 +260,7 @@ def submit_survey(request):
         summer_range = [float ( survey_response['summer'] ) - 5, float ( survey_response['summer'] ) + 5]
         fall_range = [float ( survey_response['fall'] ) - 5, float ( survey_response['fall'] ) + 5]
 
-        user_filters = { 'ADM_RATE' : [get_numeric_val(survey_response, 'acceptanceRate') / 100.0, 1], 
+        user_filters = { 'ADM_RATE' : [get_numeric_val(survey_response, 'acceptanceRate'), 1], 
         'UGDS' : get_student_body_size( survey_response['studentBodySize'] ),
         'TUITIONFEE_IN' : tuition_in, 'TUITIONFEE_OUT' : tuition_out, 'STABBR' : states, 
         'MAIN' : get_numeric_val(survey_response, 'MAIN'), 'CONTROL' : get_numeric_val(survey_response, 'CONTROL'),
