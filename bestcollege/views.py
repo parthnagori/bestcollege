@@ -103,7 +103,7 @@ def get_demographic( survey_dem, dem_key ):
     if survey_dem is not None and survey_dem in demographic_mapping and demographic_mapping[survey_dem] == dem_key:
         return 1
     else:
-        return 0
+        return None
 
 def get_income_range( survey_income, income_key ):
     income_mapping = { '< $30,000' : 'INC_PCT_LO', '$30,00 - $48,000' : 'INC_PCT_M1', '$48,000 - $75,000' : 'INC_PCT_M2',

@@ -32,7 +32,7 @@ def apply_knn(user_input={}, user_filters={}):
                 'UGDS_HISP': 4, 'UGDS_ASIAN': 4, 'UGDS_AIAN': 4, 'UGDS_NHPI': 4, 'UGDS_2MOR': 4, 
                 'UGDS_NRA': 4, 'UGDS_UNKN': 4, 'UG25ABV': 3, 'PPTUG_EF': 4, 'INC_PCT_LO': 3 , 
                 'INC_PCT_M1': 3, 'INC_PCT_M2': 3, 'INC_PCT_H1': 3, 'INC_PCT_H2': 3, 
-                'PAR_ED_PCT_1STGEN': 4, 'C150_4': 1, 'PCIP14': 1, 'RPY_7YR_RT': 1, 
+                'PAR_ED_PCT_1STGEN': 4, 'C150_4': 1, 'RPY_7YR_RT': 1, 
                 'RPY_3YR_RT': 1, 'RPY_5YR_RT': 1, "MD_EARN_WNE_P6":1, "MD_EARN_WNE_P10":1, 
                 'ADM_RATE': 1, 'COSTT4_A':1 , 'SPRING_TAVG': 2, 'SUMMER_TAVG': 2, 'FALL_TAVG': 2,
                 'WINTER_TAVG': 2}
@@ -79,7 +79,8 @@ def apply_knn(user_input={}, user_filters={}):
 
   #Assigning weights to features for a weighted KNN
   for col in list(df_knn_sc.columns):
-    df_knn_sc[col] = df_knn_sc[col].apply(lambda x: x*importance[col])
+    if col in importance:
+      df_knn_sc[col] = df_knn_sc[col].apply(lambda x: x*importance[col])
 
   #Applying PCA to reduce dimensionality
   comps = 10
