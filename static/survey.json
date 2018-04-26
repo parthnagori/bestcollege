@@ -259,11 +259,11 @@
           "choices": [
             {
               "value": 0.0,
-              "text": "To be rigorously challeneged"
+              "text": "To be rigorously challenged"
             },
             {
               "value": 0.30,
-              "text": "To be challeneged"
+              "text": "To be challenged"
             },
             {
               "value": 0.60,
