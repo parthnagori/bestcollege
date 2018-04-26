@@ -271,8 +271,8 @@ def submit_survey(request):
         'CIP14BACHL': 1, 'GRAD_DEBT_MDN10YR': [0,survey_response['monthlyLoans']] }
 
         if survey_response['program']:
-             user_input["PCIP"+survey_response[key]] = 1
-             user_filters["CIP"+survey_response[key]+"BACHL"] = 1
+             user_input["PCIP"+survey_response['program']] = 1
+             user_filters["CIP"+survey_response['program']+"BACHL"] = 1
         
         print(user_input)
         print(user_filters)
