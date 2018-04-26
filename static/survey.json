@@ -576,6 +576,166 @@
           "title":
             "How much are you antipiating to pay for monthly tuition loans?",
           "inputType" : "number"
+        },
+        {
+          "type": "dropdown",
+          "name": "program",
+          "title": "What do you want to study?",
+          "isRequired": true,
+          "choices": [
+            {
+            "value": "01",
+            "text": "Agriculture, Agriculture Operations, And Related Sciences"
+            },
+            {
+            "value": "03",
+            "text": "Natural Resources And Conservation"
+            },
+            {
+            "value": "04",
+            "text": "Architecture And Related Services"
+            },
+            {
+            "value": "05",
+            "text": "Area, Ethnic, Cultural, Gender, And Group Studies"
+            },
+            {
+            "value": "09",
+            "text": "Communication, Journalism, And Related Programs"
+            },
+            {
+            "value": "10",
+            "text": "Communications Technologies/Technicians And Support Services"
+            },
+            {
+            "value": "11",
+            "text": "Computer And Information Sciences And Support Services"
+            },
+            {
+            "value": "12",
+            "text": "Personal And Culinary Services"
+            },
+            {
+            "value": "13",
+            "text": "Education"
+            },
+            {
+            "value": "14",
+            "text": "Engineering"
+            },
+            {
+            "value": "15",
+            "text": "Engineering Technologies And Engineering-Related Fields"
+            },
+            {
+            "value": "16",
+            "text": "Foreign Languages, Literatures, And Linguistics"
+            },
+            {
+            "value": "19",
+            "text": "Family And Consumer Sciences/Human Sciences"
+            },
+            {
+            "value": "22",
+            "text": "Legal Professions And Studies"
+            },
+            {
+            "value": "23",
+            "text": "English Language And Literature/Letters"
+            },
+            {
+            "value": "24",
+            "text": "Liberal Arts And Sciences, General Studies And Humanities"
+            },
+            {
+            "value": "25",
+            "text": "Library Science"
+            },
+            {
+            "value": "26",
+            "text": "Biological And Biomedical Sciences"
+            },
+            {
+            "value": "27",
+            "text": "Mathematics And Statistics"
+            },
+            {
+            "value": "29",
+            "text": "Military Technologies And Applied Sciences"
+            },
+            {
+            "value": "30",
+            "text": "Multi/Interdisciplinary Studies"
+            },
+            {
+            "value": "31",
+            "text": "Parks, Recreation, Leisure, And Fitness Studies"
+            },
+            {
+            "value": "38",
+            "text": "Philosophy And Religious Studies"
+            },
+            {
+            "value": "39",
+            "text": "Theology And Religious Vocations"
+            },
+            {
+            "value": "40",
+            "text": "Physical Sciences"
+            },
+            {
+            "value": "41",
+            "text": "Science Technologies/Technicians"
+            },
+            {
+            "value": "42",
+            "text": "Psychology"
+            },
+            {
+            "value": "43",
+            "text": "Homeland Security, Law Enforcement, Firefighting And Related Protective Services"
+            },
+            {
+            "value": "44",
+            "text": "Public Administration And Social Service Professions"
+            },
+            {
+            "value": "45",
+            "text": "Social Sciences"
+            },
+            {
+            "value": "46",
+            "text": "Construction Trades"
+            },
+            {
+            "value": "47",
+            "text": "Mechanic And Repair Technologies/Technicians"
+            },
+            {
+            "value": "48",
+            "text": "Precision Production"
+            },
+            {
+            "value": "49",
+            "text": "Transportation And Materials Moving"
+            },
+            {
+            "value": "50",
+            "text": "Visual And Performing Arts"
+            },
+            {
+            "value": "51",
+            "text": "Health Professions And Related Programs"
+            },
+            {
+            "value": "52",
+            "text": "Business, Management, Marketing, And Related Support Services"
+            },
+            {
+            "value": "54",
+            "text": "History"
+            }
+          ]
         }
       ]
     }

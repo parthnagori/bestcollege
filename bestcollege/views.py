@@ -233,7 +233,7 @@ def submit_survey(request):
 
         men_only = None
         women_only = None
-        if ( int ( survey_response['genderExclusive'] ) ) == 1:
+        if ( get_numeric_val(survey_response, 'genderExclusive') ) == 1:
             if survey_response['gender'] == 'male':
                 men_only = 1
             elif survey_response['gender'] == 'female':
@@ -260,7 +260,7 @@ def submit_survey(request):
         summer_range = [float ( survey_response['summer'] ) - 5, float ( survey_response['summer'] ) + 5]
         fall_range = [float ( survey_response['fall'] ) - 5, float ( survey_response['fall'] ) + 5]
 
-        user_filters = { 'ADM_RATE' : [float(survey_response['acceptanceRate']) / 100.0, 1], 
+        user_filters = { 'ADM_RATE' : [get_numeric_val(survey_response, 'acceptanceRate') / 100.0, 1], 
         'UGDS' : get_student_body_size( survey_response['studentBodySize'] ),
         'TUITIONFEE_IN' : tuition_in, 'TUITIONFEE_OUT' : tuition_out, 'STABBR' : states, 
         'MAIN' : get_numeric_val(survey_response, 'MAIN'), 'CONTROL' : get_numeric_val(survey_response, 'CONTROL'),
@@ -270,6 +270,10 @@ def submit_survey(request):
         'NANTI': get_historic( historic_type, 'NANTI' ), 'MENONLY': men_only, 'WOMENONLY': women_only, 
         'CIP14BACHL': 1, 'GRAD_DEBT_MDN10YR': [0,survey_response['monthlyLoans']] }
 
+        if survey_response['program']:
+             user_input["PCIP"+response[key]] = 1
+             user_filters["CIP"+response[key]+"BACHL"] = 1
+        
         print(user_input)
         print(user_filters)
         unit_ids = apply_knn(user_input, user_filters)
